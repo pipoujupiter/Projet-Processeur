@@ -1,0 +1,6 @@
+SUB R7 R7 R7   * R7=0
+ADD R7 R0 64   * R7=64
+SUB R0 R0 R0   * R0=0
+ADD R0 R0 2    * R0=2
+STR R7 R0      * mem[64]=2
+LD  R1 R7      * R0=2 R1=mem[64]=2 R7=64

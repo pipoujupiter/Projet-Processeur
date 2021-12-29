@@ -1,0 +1,16 @@
+       SUB  R0 R0 R0     * R0=0
+       SUB  R1 R1 R1     * R1=0
+       ADD  R1 R1 2      * R1=2
+l0: JEQU R0 R1 b0:  * (R0==2)? b0:
+       ADD  R0 R0 1      * R0++
+       JMP  l0:        * 
+b0: SUB  R0 R0 R0     * R0=0
+l1: ADD   R0 R0 1      * R0++
+       JNEQ R0 R1 l1: * (R0!=2)? l1:
+       SUB  R0 R0 R0     * R0=0
+       ADD  R0 R0 4      * R0=4
+l2: SUB  R0 R0 1      * R0--
+       JSUP R0 R1 l2: * (R0>2)? l2:
+       SUB  R0 R0 R0     * R0=0
+l3: ADD  R0 R0 1      * R0++
+       JINF R0 R1 l3: * (R0<2)? l3:
